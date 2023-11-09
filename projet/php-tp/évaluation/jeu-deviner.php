@@ -30,7 +30,7 @@ while (true) {
             }
 
             if ($nombreuser < $nombre) {
-                echo "Saisissez un nombre plus grand !\n";
+                echo "Saisissez un nombres plus grand !\n";
                 $nombretentative--;
                 $tentativeuser++;
                 echo "Il vous reste $nombretentative tentatives pour réussir à trouver le chiffre.\n";
