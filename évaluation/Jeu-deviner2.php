@@ -9,7 +9,7 @@ while (true) {
     echo "2. Voir les résultats\n";
     echo "3. Voir les résultats d'un jour\n";
     echo "4. Voir les résultats d'un joueur\n";
-    echo "5. Quitter\n";
+    echo "5. Quittere\n";
 
     $menu = readline("Votre choix (1, 2, 3, 4, 5) : ");
 
