@@ -48,3 +48,7 @@ print_r($notes);
 //Affichage ce qu'il y'a dans le tableau :
 echo PHP_EOL;
 print_r($notes);
+$normal = "\033[0m";
+$texteRouge = "\033[31m";
+echo $texteRouge . "ddd" . $normal;
+
