@@ -1,9 +1,13 @@
 <?php
 
-// Soit le tableau suivant contenant des informations sur des livres
-// Chaque livre est représenté par une chaîne de caractères contenant les informations suivantes :
-// Titre:Auteur:Année de parution:Genre:ISBN
-// Exemple : "Le Petit Prince:Antoine de Saint-Exupéry:1943:Roman:978-2-07-040850-4"
+
+//echo "1. Afficher la liste des livres\n";
+//echo "2. Rechercher un livre par auteur\n";
+//echo "3. Modifier l'année de parution d'un livre\n";
+//echo "4. Voir les résultats d'un joueur\n";
+//  echo "5. Quitter\n";
+//
+
 $livres = [
     "Les Misérables:Victor Hugo:1862:Roman historique:978-0-679-60129-2",
     "Notre-Dame de Paris:Victor Hugo:1831:Roman gothique:978-0-679-60136-0",
