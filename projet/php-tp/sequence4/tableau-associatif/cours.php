@@ -85,3 +85,23 @@ if (empty($étudiantss)){
         echo "$étudiant";
     }
 }
+PHP_EOL;
+//calculer et afficher la moyenne des notes !!
+
+//version 1 : rapide (foreach)
+if (empty($notes) ==false){
+$somme = 0;
+foreach ($notes as $note) {
+    $somme += $note;
+}
+$moyenne = round($somme / count($notes));
+echo $moyenne;
+echo PHP_EOL;
+}
+
+//version 2 : propre
+if (empty($notes) ==false) {
+    $sum = array_sum($notes);
+    $average = $sum / count($notes);
+    echo $average;
+}
