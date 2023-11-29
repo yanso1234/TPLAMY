@@ -1,8 +1,10 @@
 <?php
-function estPair(int $nb) : bool{
+// Inclure le fichier cours-fonction.php
+// dans lequel's la fonction est définie
+require "cours-fonction.php";
 
-    return $nb % 2 == 0;
-    }
+
+
 
     $nombre = readline("Saisir un nombre : ");
 $resultat = estPair($nombre);
