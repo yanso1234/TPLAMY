@@ -12,17 +12,16 @@ echo "Connexion OK".PHP_EOL;
 
 
 //Preparation de la requête
-$requeteSQL = "SELECT * FROM etudiant";
+$requeteSQL = "SELECT prenom_etudiant, nom_etudiant FROM etudiants ORDER BY nom_etudiant";
 $requete = $connexion->prepare($requeteSQL);
 //Execution de la requête : envoie de la requête au SGBD
 $requete->execute();
 //envoie SELECT * FROM etudiant au SGBD
 //Récupération des enregistrement
 //Comment récupérer les enregistrements
-$requete->setFetchMode(PDO::FETCH_ASSOC);
+//$requete->setFetchMode(PDO::FETCH_ASSOC); // gagner une ligne de code grâce à la commande ci-dessous
 //Récupérer les enregistrements sous la forme demandée (tableau associatif)
-$resultats = $requete ->fetchAll();
-
+$resultats = $requete ->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -32,10 +31,8 @@ $resultats = $requete ->fetchAll();
 //Affichage des étudiants
 foreach ($resultats as $resultat) {
 //$resultat : un enregistrement
-    echo $resultat["id_etudiant"] . "".
-         $resultat["prenom_etudiant"] . "".
-         $resultat["nom_etudiant"] . "".
-         $resultat["email_etudiant"] . PHP_EOL;
+    echo $resultat["prenom_etudiant"] . "".
+         $resultat["nom_etudiant"] . PHP_EOL;
 
 }
 
