@@ -1,11 +1,35 @@
 <?php
 
-//Définir les information de connexion
-const DB_HOST = "localhost:3306";
-const DB_NAME = "db_intro";
-const DB_USER = "root";
-const DB_PASSWORD = "";
+/**
+ * @var PDO $connexion
+ */
+require "config/db-config.php";
 
-//Connexion à la base de donnée
-$connexion =  new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASSWORD);
-echo "Connexion OK".PHP_EOL;
+//Demander la saisie d'un étudiant
+$IdEtudiant = readline('Saisir un ID étudiant : ');
+
+//Préparer la requête
+$requete = $connexion->prepare("SELECT * FROM etudiants WHERE id_etudiant = :id");
+//$requete->bindValue(":id",2);
+//Exécuter la requête
+$requete->execute([
+    ":id" => $IdEtudiant
+
+    ]
+);
+
+//Récuperer le résultat
+$resultats = $requete->fetch(PDO::FETCH_ASSOC);
+
+//Tester si l'enregistrement (etudiant) existe
+if ($resultats) {
+
+
+//Traiter le résultat
+print_r ($resultats);
+
+} else {
+
+    echo "Etudiant recherché n'existe pas";
+
+}
